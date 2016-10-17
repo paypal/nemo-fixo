@@ -1,0 +1,47 @@
+{
+    "name": "nemo-fixo",
+    "version": "0.5.0",
+    "description": "Nemo plugin for fixo - an inheritable and composable JSON test fixtures for Node.js",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha test/spec",
+        "watch": "mocha test/spec -w --recursive",
+        "lint": "eslint **/*.js"
+    },
+    "author": "Herryanto Siatono <herryanto@gmail.com>",
+    "licenses": [{
+        "type": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }],
+    "homepage": "https://github.com/paypal/nemo-fixo",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/paypal/nemo-fixo"
+    },
+    "keywords": [
+        "nemo",
+        "plugin",
+        "mocha",
+        "fixtures",
+        "test",
+        "json",
+        "inheritable",
+        "composable"
+    ],
+    "dependencies": {
+        "confit": "^2.0.0",
+        "debug": "^2.2.0",
+        "fixo": "^0.6.0",
+        "shush": "^1.0.0"
+    },
+    "peerDependencies": {
+        "nemo": "^2.0.0"
+    },
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "eslint": "^2.3.0",
+        "eslint-config-airbnb": "^6.1.0",
+        "mocha": "^2.4.5",
+        "nemo": "^2.0.0"
+    }
+}

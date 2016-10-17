@@ -1,0 +1,15 @@
+{
+  "driver": {
+    "browser": "phantomjs"
+  },
+  "plugins": {
+    "fixo": {
+      "module": "path:../index",
+      "arguments": [{
+        "defaultProfile": "ES",
+        "srcDir": "test/fixture",
+        "specDir": "test/spec"
+      }]
+    }
+  }
+}

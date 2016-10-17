@@ -1,0 +1,19 @@
+{
+    "master": {
+        "greeting": "Good Morning"
+    },
+    "DE": {
+        "greeting": "Guten Morgen"
+    },
+    "ES": {
+        "greeting": "Buenos Dias"
+    },
+    "ID": {
+        "greeting": "Selamat Pagi"
+    },
+    "iterate": {
+        "all": ["DE", "ES"],
+        "large": "include:iterate_config.large",
+        "small": ["DE"]
+    }
+}
