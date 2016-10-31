@@ -1,10 +1,10 @@
 # nemo-fixo
 
-Test data can be complex especially when you need to test different environments and locales.
+nemo-fixo is a [nemo plugin](https://github.com/paypal/nemo) plugin to manage your test fixtures.
 
-There tends to be lots of data duplication and there is no standard and easy way to manage these data. `nemo-fixo` taps on [`fixo`](https://github.com/paypal/fixo) library to solve these pain points.
+Test fixtures can be complex when you need to run your tests for different environments and locales, as there tends to be a lot of data duplication.
 
-`nemo-fixo` exposes `fixo` instance through `nemo.fixo`; it also provides `load` and `iterate` functions to load the fixture data to drive your test cases.
+`nemo-fixo` solves this issue with [`fixo`](https://github.com/paypal/fixo), an extension to JSON parser that supports composable and inheritable JSON. `fixo` instance is accessible from `nemo.fixo`; `nemo-fixo` also provides `load` and `iterate` functions to use the fixture data to drive your mocha test cases.
 
 ## Installation
 
@@ -122,7 +122,7 @@ Shared default values. Visa, Diners, Amex extend the default values:
 
 `Resolvers` allow you to transform an object property value as a whole, while `Macros` allow you to replace parts of a string value with dynamic content.
 
-You could easily create custom resolvers and macros, refer to [Fixo documentation](https://github.com/paypal/fixo) for more information.
+You could easily create custom resolvers and macros, refer to [fixo documentation](https://github.com/paypal/fixo) for more information.
 
 ```js
 {
