@@ -132,7 +132,7 @@ function overrideMochaIt(mochaIt, fixtureName, profile, fixo, isOnly) {
             itOverride = function (done) {
                 fixo.load(fixtureName, profile).then(function (fixture) {
                     return itCallback.call(this, done, fixture);
-                }.bind(this));
+                }.bind(this)).catch(done);
             };
         }
 

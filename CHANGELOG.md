@@ -1,3 +1,6 @@
+## v0.5.1 (17 Nov 2016)
+* Handle error thrown when calling mocha it
+
 ## v0.5.0 (14 Sep 2016)
 * Change testDir option to specDir
 * Change baseDir option to srcDir
