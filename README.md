@@ -109,7 +109,7 @@ Shared default values. Visa, Diners, Amex extend the default values:
        "cvv": "123"
     },
     "diners": {
-      "account_number": "22222222222222",
+       "account_number": "22222222222222",
     },
     "amex": {
        "account_number": "333333333333333"
@@ -179,7 +179,6 @@ iterate('fixture-name', ['US', 'GB', 'CA'], function(profile, fixture, index) {
 
       // To load a new instance of fixture for each test case
       it('should... for ' + element.name, function(done, fixture) {
-      P
         ...
       });
     });
