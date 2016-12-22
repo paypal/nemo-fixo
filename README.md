@@ -1,6 +1,6 @@
 # nemo-fixo
 
-nemo-fixo is a [nemo plugin](https://github.com/paypal/nemo) plugin to manage your test fixtures.
+nemo-fixo is a [nemo](https://github.com/paypal/nemo) plugin to manage your test fixtures.
 
 Test fixtures can be complex when you need to run your tests for different environments and locales, as there tends to be a lot of data duplication.
 
@@ -39,7 +39,7 @@ Edit Nemo `config.json` file, add `nemo-fixo` plugin settings:
 
 ```js
 // Load fixture
-nemo.fixo.load('card', function(card) { ...  });
+nemo.fixo.load('card', function(err, card) { ...  });
 
 // Or with Promise
 nemo.fixo.load('card').then(function(card) { ...  });
@@ -147,7 +147,7 @@ You could easily create custom resolvers and macros, refer to [fixo documentatio
 
 ### Load and iterate functions
 
-Use your test fixture data to drive your test cases. `nemo-fixo` provides `load` and `iterate` functions:
+Use your test fixture data to drive your test cases. `nemo-fixo` provides `load` and `iterate` functions. They load fixtures synchronously, so you could use the fixture data to customize your test spec:
 * `nemo-fixo/load` — to load one or multiple fixture
 * `nemo-fixo/iterate` — to load one or multiple fixtures and iterate over different profiles
 
@@ -162,23 +162,28 @@ if (fixture.flagOn) {
 } else {
   it('should test that', function() { ... }
 }
+
+// Load multiple fixtures
+var fixtures = load(['card', 'bank']);
 ```
 
 #### Iterate fixtures function
+
+To repeat test scenario for each country in the iterate list:
 
 ```js
 var iterate = require('nemo-fixo/iterate');
 
 iterate('fixture-name', ['US', 'GB', 'CA'], function(profile, fixture, index) {
   describe('Test scenario for profile ' + profile, function() {
-    // Another level of iterations based on the fixture data if needed
+    // Use fixture data to further customize your test spec
     fixture.elements.forEach(function(element) {
       it('should... for ' + element.name, function(done) {
         ...
       });
 
-      // To load a new instance of fixture for each test case
-      it('should... for ' + element.name, function(done, fixture) {
+      // Load a new fixture instance for each test case
+      it('should... for ' + element.name, function(done, newFixture) {
         ...
       });
     });
