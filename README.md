@@ -48,7 +48,7 @@ nemo.fixo.load('card').then(function(card) { ...  });
 nemo.fixo.load('card.visa', 'GB', function(card) { ...  });
 
 // Load multiple fixtures
-nemo.fixo.load(['card', 'bank'], function(fixtures) { ...  }method);
+nemo.fixo.load(['card', 'bank'], function(fixtures) { ...  });
 
 // Load fixture in a folder
 nemo.fixo.load('folder/card', function(card) { ...  });
