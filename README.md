@@ -174,20 +174,12 @@ To repeat test scenario for each country in the iterate list:
 ```js
 var iterate = require('nemo-fixo/iterate');
 
-iterate('fixture-name', ['US', 'GB', 'CA'], function(profile, fixture, index) {
-  describe('Test scenario for profile ' + profile, function() {
-    // Use fixture data to further customize your test spec
-    fixture.elements.forEach(function(element) {
-      it('should... for ' + element.name, function(done) {
-        ...
-      });
+iterate('fixture-name', ['US', 'GB', 'CA'], function(country, iterateFixture) {
+  it('should do this', function(fixture) { ... });
 
-      // Load a new fixture instance for each test case
-      it('should... for ' + element.name, function(done, newFixture) {
-        ...
-      });
-    });
-  });
+  if (country === 'US' && iterateFixture.flagOn) {
+    it('should also do this', function(done, fixture) { ... });
+  }
 });
 ```
 
