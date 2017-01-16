@@ -169,7 +169,7 @@ var fixtures = load(['card', 'bank']);
 
 #### Iterate fixtures function
 
-To repeat test scenario for each country in the iterate list:
+To repeat the same set of test cases for each profile, with the option for further customization:
 
 ```js
 var iterate = require('nemo-fixo/iterate');
