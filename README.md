@@ -1,5 +1,7 @@
 # nemo-fixo
 
+[![Travis CI](https://travis-ci.org/paypal/nemo-fixo.svg?branch=master)](https://travis-ci.org/paypal/nemo-fixo)
+
 nemo-fixo is a [nemo](https://github.com/paypal/nemo) plugin to manage your test fixtures.
 
 Test fixtures can be complex when you need to run your tests for different environments and locales, as there tends to be a lot of data duplication.
