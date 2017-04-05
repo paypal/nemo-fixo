@@ -35,9 +35,9 @@ describe('@iterate', function () {
             it('should pass fixture to iteratee callback', function () {
                 assert.isDefined(fixIterate);
                 if (profile === 'DE') {
-                    assert.equal(fixIterate.greeting, 'Guten Morgen');
+                    assert.equal(fixIterate.morning, 'Guten Morgen');
                 } else if (profile === 'ID') {
-                    assert.equal(fixIterate.greeting, 'Selamat Pagi');
+                    assert.equal(fixIterate.morning, 'Selamat Pagi');
                 }
             });
         });
@@ -49,7 +49,7 @@ describe('@iterate', function () {
                 it('should pass profile, fixture, index  and profiles to iterate callback',
                     function () {
                         assert.isDefined(fixIterate);
-                        assertGreeting(['DE', 'ID'], fixIterate.greeting, profile,
+                        assertGreeting(['DE', 'ID'], fixIterate.morning, profile,
                             fixIterate, index);
                         assert.deepEqual(profiles, ['DE', 'ID']);
                     }
@@ -59,7 +59,7 @@ describe('@iterate', function () {
                     function (done, fixture) {
                         assert.isDefined(fixture);
                         assert.notEqual(fixture, fixIterate);
-                        assertGreeting(['DE', 'ID'], fixture.greeting, profile, fixture, index);
+                        assertGreeting(['DE', 'ID'], fixture.morning, profile, fixture, index);
                         done();
                     }
                 );
@@ -79,7 +79,7 @@ describe('@iterate', function () {
             iterate('greeting', ['DE', 'ID'], function (profile, fixture, index) {
                 it('should iterate and load fixture for profile: ' + profile,
                     function () {
-                        assertGreeting(['ES', 'ID'], fixture.greeting, profile, fixture, index);
+                        assertGreeting(['ES', 'ID'], fixture.morning, profile, fixture, index);
                     }
                 );
             });
@@ -91,7 +91,7 @@ describe('@iterate', function () {
             iterate('greeting', function (profile, fixture, index) {
                 it('should iterate and load fixture for profile: ' + profile,
                     function () {
-                        assertGreeting(['DE', 'ES'], fixture.greeting, profile, fixture, index);
+                        assertGreeting(['DE', 'ES'], fixture.morning, profile, fixture, index);
                     }
                 );
             });
@@ -106,7 +106,7 @@ describe('@iterate', function () {
 
                         assert.equal(fixtures.length, 2);
                         assertGreeting(['DE', 'ES'],
-                            fixGreeting.greeting, profile, fixGreeting, index);
+                            fixGreeting.morning, profile, fixGreeting, index);
                         assert.equal(fixProfile.name, 'Walter Mitty');
                     }
                 );
@@ -243,14 +243,14 @@ describe('@iterate', function () {
         iterate(__filename, function (profile, fixture, index) {
             it('should load fixture matching the spec filename, profile: ' + profile,
                 function (done, fixture) {
-                    assertGreeting(['DE', 'ES'], fixture.greeting, profile, fixture, index);
+                    assertGreeting(['DE', 'ES'], fixture.morning, profile, fixture, index);
                     done();
                 }
             );
 
             it('should run test case without the done callback, profile:' + profile,
                 function () {
-                    assertGreeting(['DE', 'ES'], fixture.greeting, profile, fixture, index);
+                    assertGreeting(['DE', 'ES'], fixture.morning, profile, fixture, index);
                 }
             );
         });

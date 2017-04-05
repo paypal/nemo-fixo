@@ -15,13 +15,13 @@ describe('@load', function () {
 
     it('should load fixture from default profile', function () {
         assert.isDefined(fixture);
-        assert.equal(fixture.greeting, 'Buenos Dias');
+        assert.equal(fixture.morning, 'Buenos Dias');
     });
 
     it('should load multiple fixtures', function () {
         var fixtures = load(['greeting', 'profile']);
         assert.equal(2, fixtures.length);
-        assert.equal(fixtures[0].greeting, 'Buenos Dias');
+        assert.equal(fixtures[0].morning, 'Buenos Dias');
         assert.equal(fixtures[1].name, 'Walter Mitty');
     });
 
@@ -29,8 +29,8 @@ describe('@load', function () {
         function (done) {
             var newFixture = load('greeting');
             assert.isDefined(newFixture);
-            assert.equal(newFixture.greeting, 'Buenos Dias');
-            assert.equal(newFixture.greeting, fixture.greeting);
+            assert.equal(newFixture.morning, 'Buenos Dias');
+            assert.equal(newFixture.morning, fixture.morning);
             assert.notStrictEqual(newFixture, fixture);
             done();
         }
@@ -40,7 +40,7 @@ describe('@load', function () {
         function (done) {
             var newFixture = load('greeting', 'DE');
             assert.isDefined(newFixture);
-            assert.equal(newFixture.greeting, 'Guten Morgen');
+            assert.equal(newFixture.morning, 'Guten Morgen');
             done();
         }
     );
@@ -48,7 +48,7 @@ describe('@load', function () {
     it('should load fixture matching the spec name', function () {
         var fixture = load(__filename);
         assert.isDefined(fixture);
-        assert.isDefined(fixture.name, 'load fixture');
+        assert.isDefined(fixture.name, 'fixture_from_load_json');
     });
 
     after(function (done) {

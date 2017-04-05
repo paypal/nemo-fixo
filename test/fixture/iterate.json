@@ -1,12 +1,12 @@
 {
     "master": {
-        "greeting": "Good Morning"
+        "morning": "Good Morning"
     },
     "DE": {
-        "greeting": "Guten Morgen"
+        "morning": "Guten Morgen"
     },
     "ES": {
-        "greeting": "Buenos Dias"
+        "morning": "Buenos Dias"
     },
     "iterate": {
         "all": ["DE", "ES"]
