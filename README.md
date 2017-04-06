@@ -6,7 +6,9 @@ nemo-fixo is a [nemo](https://github.com/paypal/nemo) plugin to manage your test
 
 Test fixtures can be complex when you need to run your tests for different environments and locales, as there tends to be a lot of data duplication.
 
-`nemo-fixo` solves this issue with [`fixo`](https://github.com/paypal/fixo), an extension to JSON parser to extend and compose JSON objects. `fixo` instance is accessible from `nemo.fixo`; `nemo-fixo` also provides `load` and `iterate` functions to use the fixture data to drive your mocha test cases.
+`nemo-fixo` solves this issue with [`fixo`](https://github.com/paypal/fixo), an extension to JSON parser to extend and compose JSON objects. `fixo` instance is accessible from `nemo.fixo` in a test case.
+
+There are also `load` and `iterate` functions to compose test cases based on the fixture data.
 
 ## Installation
 
